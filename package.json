@@ -1,0 +1,24 @@
+{
+  "name": "@myspace-nu/jquery.restful",
+  "version": "1.0.0",
+  "description": "A jQuery plugin for communicating with REST APIs",
+  "main": "dist/jquery.restful.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myspace-nu/jquery.restful.git"
+  },
+  "keywords": [
+    "rest",
+    "restful",
+    "jquery"
+  ],
+  "author": "Johan Johansson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/myspace-nu/jquery.restful/issues"
+  },
+  "homepage": "https://github.com/myspace-nu/jquery.restful#readme"
+}
