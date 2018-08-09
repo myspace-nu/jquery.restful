@@ -2,11 +2,22 @@
 
 A jQuery plugin for communicating with REST APIs.
 
+[![Build Status](https://travis-ci.org/myspace-nu/jquery.restful.svg?branch=master)](https://travis-ci.org/myspace-nu/jquery.restful)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/myspace-nu/jquery.restful/blob/master/LICENSE)
+
 ## Installation
 
-Include script *after* the jQuery library
+Using npm
 
-    <script src="/path/to/jquery.cookie-consent.min.js"></script>
+	npm install @myspace-nu/jquery.restful --save
+
+Using CDN
+
+	<script src="https://cdn.jsdelivr.net/npm/@myspace-nu/jquery.restful/dist/jquery.restful.min.js"></script>
+
+Or manually by including the script *after* the jQuery library
+
+	<script src="/path/to/jquery.restful.min.js"></script>
 
 ## Usage
 

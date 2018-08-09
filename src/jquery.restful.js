@@ -1,5 +1,5 @@
 /*!
- * jQuery restful plugin 0.1
+ * jQuery restful plugin
  * https://github.com/myspace-nu
  *
  * Copyright 2018 Johan Johansson
