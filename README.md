@@ -5,6 +5,10 @@ A jQuery plugin for communicating with REST APIs.
 [![Build Status](https://travis-ci.org/myspace-nu/jquery.restful.svg?branch=master)](https://travis-ci.org/myspace-nu/jquery.restful)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/myspace-nu/jquery.restful/blob/master/LICENSE)
 
+## Live demo
+
+See a live demo on [CodePen](https://codepen.io/myspace-nu/full/ebYRMY)
+
 ## Installation
 
 Using npm
