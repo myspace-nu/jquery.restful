@@ -1,6 +1,6 @@
 {
   "name": "@myspace-nu/jquery.restful",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A jQuery plugin for communicating with REST APIs",
   "main": "dist/jquery.restful.min.js",
   "scripts": {
