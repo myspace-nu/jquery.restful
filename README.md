@@ -83,6 +83,12 @@ Using GET method and paramaters as part of the URL.
 
 *Default: null*
 
+**preventHammering** - Attempts to prevent hammering if the users click multiple times on a submit button or link before the server has responded.
+
+    preventHammering: false
+
+*Default: true*
+
 **url** - Base URL for the API
 
     url: 'https://jsonplaceholder.typicode.com'
