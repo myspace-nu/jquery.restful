@@ -45,6 +45,8 @@
 					}
 					var data = $(this).serializeObject();
 					var url = $(this).attr("action");
+					if(!url)
+						console.warn("No URL found for "+elm.tagName+"-element.");
 					if(!url.match(/^(\w{3,5}\:)?\/+/) && settings.url){
 						url = settings.url + "/" + url.replace(/^\/+/,'');
 					}
@@ -96,6 +98,8 @@
 					}					
 					var data = $(this).data();
 					var url = $(this).attr('href');
+					if(!url)
+						console.warn("No URL found for "+elm.tagName+"-element.");
 					if(!url.match(/^(\w{3,5}\:)?\/+/) && settings.url){
 						url = settings.url + "/" + url.replace(/^\/+/,'');
 					}
