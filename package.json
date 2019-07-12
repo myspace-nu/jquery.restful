@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/myspace-nu/jquery.restful#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.14"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
