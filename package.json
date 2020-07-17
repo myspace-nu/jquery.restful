@@ -24,7 +24,7 @@
   "homepage": "https://github.com/myspace-nu/jquery.restful#readme",
   "dependencies": {
     "jquery": "^3.5.0",
-    "lodash": "^4.17.14"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
