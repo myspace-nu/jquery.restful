@@ -28,6 +28,7 @@
 			onComplete: function(){ },
 			onSuccess: function(){ },
 			onError: function(){ },
+			onBeforeRequest: function(){ },
 			dataType: 'json',
 			preventHammering: true,
 			defaultValue: null
@@ -38,6 +39,7 @@
 		  	if(this.tagName.toLowerCase() == 'form'){
 				$(this).submit(function(event) {
 					event.preventDefault();
+					settings.onBeforeRequest.call(this);
 					var elm=this;
 					var submitButton = $(event.target).find("input[type=submit]:focus,button:focus");
 					if(settings.preventHammering){
@@ -89,6 +91,7 @@
 			} else { // if(['a','button','input','img'].includes(this.tagName.toLowerCase()))
 				$(this).click(function(event) {
 					event.preventDefault();
+					settings.onBeforeRequest.call(this);
 					var elm=this;
 					if(settings.preventHammering){
 						if($(elm).hasClass('disabled')){

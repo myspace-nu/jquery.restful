@@ -117,4 +117,10 @@ Using GET method and paramaters as part of the URL.
 		console.log({ element:this, data:data });
 	}
 
+**onBeforeRequest** - Function called before a request is sent
+
+	onBeforeRequest:function(data){
+		console.log({ element:this });
+	}
+
 ### Author: [Johan Johansson](https://github.com/myspace-nu)
