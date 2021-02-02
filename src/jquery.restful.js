@@ -75,6 +75,36 @@
 							settings.onComplete.call(this,json);
 						}
 					};
+					var iFiles=0; var iFilesProcessed=0;
+					$(this).find('input[type="file"]').each(function(index) {
+						var files = $(this).get()[0].files;
+						iFiles+=files.length;
+						var name = $(this).attr("name");
+						data[name]=new Array();
+						[...files].forEach((file) => {
+							var reader = new FileReader();
+							reader.onload = function (e) {
+								var matches = e.target.result.substring(0,e.target.result.indexOf(',')).match(/^\w+\:(.+?\/.+?);(\w+)/);
+								data[name].push({
+									"filename":file.name,
+									"size":file.size,
+									"content-type":matches[1],
+									"encoding":matches[2],
+									"data":e.target.result.substring(e.target.result.indexOf(',')+1)
+								});
+								iFilesProcessed++;
+								if(iFilesProcessed == iFiles){
+									if(settings.dataType.toLowerCase() == 'json'){
+										as.data = JSON.stringify(data);
+									} else {
+										as.data = data;
+									}
+									$.ajax(as);
+								}
+							};
+							reader.readAsDataURL(file);
+						});
+					});
 					if(as.type.toLowerCase() == 'get'){
 						as.url += '?'+$.param(data);
 					} else {
@@ -86,7 +116,9 @@
 							as.data = data;
 						}
 					}
-					$.ajax(as);
+					if(iFiles==0){
+						$.ajax(as);
+					}
 				});
 			} else { // if(['a','button','input','img'].includes(this.tagName.toLowerCase()))
 				$(this).click(function(event) {

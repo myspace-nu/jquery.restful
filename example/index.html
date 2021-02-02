@@ -29,11 +29,20 @@
 				</div>
 				<div class="form-group"> <!-- <input type="submit" class="btn btn-primary" value="Go"> --><button type="submit" class="btn btn-primary">Go</button></div>
 			</form>
-			
 			<p>
 				<h4>Using a link</h4>
 				<a class="myClass" data-foo="bar" href="https://jsonplaceholder.typicode.com/posts">Go</a>
 			</p>
+			<form class="myClass" action="https://jsonplaceholder.typicode.com/posts" method="post">
+				<h4>It even works with files</h4>
+				<div class="form-group">
+					<input type="file" name="fileContent1" multiple class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="file" name="fileContent2" multiple class="form-control">
+				</div>
+				<div class="form-group"> <!-- <input type="submit" class="btn btn-primary" value="Go"> --><button type="submit" class="btn btn-primary">Go</button></div>
+			</form>
 			<div style="display:none;" class="alert alert-success" role="alert">
 				<h4>Server said:</h4>
 				<pre id="output"></pre>
