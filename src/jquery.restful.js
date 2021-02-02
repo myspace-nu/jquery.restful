@@ -81,7 +81,7 @@
 						iFiles+=files.length;
 						var name = $(this).attr("name");
 						data[name]=new Array();
-						[...files].forEach((file) => {
+						Array.prototype.forEach.call(files, function(file) { // Workaround since FileList is not an Array
 							var reader = new FileReader();
 							reader.onload = function (e) {
 								var matches = e.target.result.substring(0,e.target.result.indexOf(',')).match(/^\w+\:(.+?\/.+?);(\w+)/);
