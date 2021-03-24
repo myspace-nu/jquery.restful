@@ -28,7 +28,7 @@
 			onComplete: function(){ },
 			onSuccess: function(){ },
 			onError: function(){ },
-			onBeforeRequest: function(){ },
+			onBeforeRequest: function(){ return true; }, // Can be used for input validation. Should return true if succesful
 			dataType: 'json',
 			preventHammering: true,
 			defaultValue: null
@@ -39,7 +39,9 @@
 		  	if(this.tagName.toLowerCase() == 'form'){
 				$(this).submit(function(event) {
 					event.preventDefault();
-					settings.onBeforeRequest.call(this);
+					var isValid = settings.onBeforeRequest.call(this,this);
+					if(!isValid)
+						return console.warn("Input is invalid, aborting...");
 					var elm=this;
 					var submitButton = $(event.target).find("input[type=submit]:focus,button:focus");
 					if(settings.preventHammering){
@@ -123,7 +125,9 @@
 			} else { // if(['a','button','input','img'].includes(this.tagName.toLowerCase()))
 				$(this).click(function(event) {
 					event.preventDefault();
-					settings.onBeforeRequest.call(this);
+					var isValid = settings.onBeforeRequest.call(this,this);
+					if(!isValid)
+						return console.warn("Input is invalid, aborting...");
 					var elm=this;
 					if(settings.preventHammering){
 						if($(elm).hasClass('disabled')){
