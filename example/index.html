@@ -60,16 +60,20 @@
 						border: 1px solid #ced4da;
 						border-radius: .25rem;
 						text-align: center;
-						transition: background 0.3s ease-in-out;
+						background:
+							url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMzcuNTc4IiBoZWlnaHQ9IjMzNy41NzkiPjxwYXRoIGZpbGw9IiNkZGQiIGQ9Ik0yNzQuMTA3IDEzMC42OGMtMTQuNjQ2LTI2LjE1MS00My40ODctNDEuMTU0LTc0LjQyNC0zNi4yMTUtMTIuMTQ3LTI1LjQ4Ny0zNy41MzYtNDEuNjczLTY2LjA5OC00MS42NzMtNDAuNDIxIDAtNzMuMzE4IDMyLjg5Ny03My4zMTggNzMuMzM0IDAgMS42NjYuMDY2IDMuMzg2LjIxNiA1LjE3QzI1LjU5MyAxMzkuMjU0IDAgMTcwLjc1IDAgMjA3LjAyNWMwIDQyLjg4IDM0Ljg3OSA3Ny43NTYgNzcuNzUzIDc3Ljc1NkgxNTMuNTg4di04Ni4yMzVsLTEwLjg2MyAxMC44NjNjLTUuNzAyIDUuNzA1LTE1LjY0NiA1LjcwNS0yMS4zNDQgMGExNS4wMTUgMTUuMDE1IDAgMDEtNC40MjgtMTAuNjcxYzAtNC4wMzUgMS41NzYtNy44MTIgNC40MzUtMTAuNjU4bDM2LjYzNS0zNi42NTNjMi43OTgtMi44MDEgNi42ODktNC40MDcgMTAuNjYxLTQuNDA3bDEuNDY1LjA0OGMzLjU0LjI4NSA2LjgzNiAxLjgwMiA5LjM5NSA0LjM0MWwzNi42NTkgMzYuNjcxYTE0Ljk2NCAxNC45NjQgMCAwMTQuNDI1IDEwLjY2NWMwIDQuMDIyLTEuNTczIDcuODMtNC40MzIgMTAuNjc2LTUuNjggNS42OTktMTUuNjQyIDUuNjk5LTIxLjM0MSAwbC0xMS4wODUtMTEuMTAzdjg2LjQ2OWg3Ni4wNTdjNDIuODc1IDAgNzcuNzUxLTM0Ljg4MiA3Ny43NTEtNzcuNzU2IDAtMzcuMzE0LTI3LjA2My02OS41Ni02My40NzEtNzYuMzUxeiIvPjwvc3ZnPg==)
+							no-repeat
+							center;
+						background-size: contain;
 					}
 					.form-file-drag-drop-area .form-file-selected-info .form-file-selected {
 						display: none;
 					}
 					.form-file-drag-drop-area:hover .form-file-selected-info {
-						background: rgba(160, 160, 160, 0.4);
+						background-color: rgba(200, 200, 200, 0.2);
 					}
 					.form-file-drag-drop-area input[type=file]:valid + .form-file-selected-info {
-						background: rgba(160, 160, 160, 0.2);
+						background-color: rgba(220, 220, 220, 0.2);
 					}
 					.form-file-drag-drop-area input[type=file]:valid + .form-file-selected-info .form-file-selected {
 						display: inline-block;
