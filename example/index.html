@@ -35,9 +35,71 @@
 			</p>
 			<form class="myClass" action="https://jsonplaceholder.typicode.com/posts" method="post">
 				<h4>It even works with files</h4>
-				<div class="form-group">
-					<input type="file" name="fileContent1" multiple class="form-control">
+				<!-- Some fancy styling -->
+				<style>
+					.form-file-drag-drop-area {
+						width: 100%;
+						max-height: 5.5em;
+						overflow-y: auto;
+						position: relative;
+					}
+					.form-file-drag-drop-area input[type=file] {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						opacity: 0;
+						cursor: pointer;
+					}
+					.form-file-drag-drop-area .form-file-selected-info {
+						width: 100%;
+						padding: 30px;
+						border: 1px solid #ced4da;
+						border-radius: .25rem;
+						text-align: center;
+						transition: background 0.3s ease-in-out;
+					}
+					.form-file-drag-drop-area .form-file-selected-info .form-file-selected {
+						display: none;
+					}
+					.form-file-drag-drop-area:hover .form-file-selected-info {
+						background: rgba(160, 160, 160, 0.4);
+					}
+					.form-file-drag-drop-area input[type=file]:valid + .form-file-selected-info {
+						background: rgba(160, 160, 160, 0.2);
+					}
+					.form-file-drag-drop-area input[type=file]:valid + .form-file-selected-info .form-file-selected {
+						display: inline-block;
+					}
+					.form-file-drag-drop-area input[type=file]:valid + .form-file-selected-info .form-file-placeholder {
+						display: none;
+					}
+				</style>
+				<!-- Optional JavaScript -->
+				<script type="text/javascript">
+					document.addEventListener("DOMContentLoaded", function(event) { 
+						$(".form-file-drag-drop-area input[type='file']").each(function( index ) {
+							$(this).on("change", function(event) {
+								var files = new Array();
+								for(var i=0; i<$(this)[0].files.length; i++){
+									files.push($(this)[0].files[i].name);
+								}
+								$(this).closest(".form-file-drag-drop-area").find(".form-file-selected").html("Selected file(s): "+files.join(", "));
+							});
+						});
+					});
+				</script>
+				<div class="form-group form-file-drag-drop-area">
+					<input type="file" name="fileContent1" required="required" multiple="multiple" class="form-control">
+					<div class="form-file-selected-info">
+						<div class="form-file-selected">File(s) selected for upload</div>
+						<div class="form-file-placeholder">Select files for upload</div>
+					</div>
 				</div>
+				<!-- Unstyled version -->
 				<div class="form-group">
 					<input type="file" name="fileContent2" multiple class="form-control">
 				</div>
