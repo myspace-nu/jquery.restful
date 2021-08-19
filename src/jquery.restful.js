@@ -30,6 +30,7 @@
 			onError: function(){ },
 			onBeforeRequest: function(){ return true; }, // Can be used for input validation. Should return true if succesful
 			dataType: 'json',
+			headers: {},
 			preventHammering: true,
 			defaultValue: null
 		}, options);
@@ -63,7 +64,8 @@
 					var as = {
 						url: url,
 						type: $(this).attr('method') || settings.method,
-						context:this,
+						context: this,
+						headers: settings.headers,
 						success: function(json){
 							settings.onSuccess.call(this,json);
 						},
@@ -151,7 +153,8 @@
 					var as = {
 						url: url,
 						type: settings.method,
-						context:this,
+						context: this,
+						headers: settings.headers,
 						success: function(json){
 							settings.onSuccess.call(this,json);
 						},
@@ -180,5 +183,6 @@
 				});
 			}
 		});
+		return settings;
 	};
 }(jQuery));

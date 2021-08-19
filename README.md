@@ -71,6 +71,7 @@ Using GET method and paramaters as part of the URL.
 	</script>
 
 ## Options
+
 **dataType** - Data type to use
 
     dataType: 'form'
@@ -83,21 +84,23 @@ Using GET method and paramaters as part of the URL.
 
 *Default: null*
 
-**preventHammering** - Attempts to prevent hammering if the users click multiple times on a submit button or link before the server has responded.
+**headers** - Plain object with HTTP headers to use
 
-    preventHammering: false
+    headers: { "Authorization": "Bearer <token>" }
 
-*Default: true*
+*Default: {}*
 
-**url** - Base URL for the API
-
-    url: 'https://jsonplaceholder.typicode.com'
-	
 **method** - HTTP method / Verb to use
 
     method: 'GET'
 
 *Default: 'POST'*
+
+**onBeforeRequest** - Function called before a request is sent
+
+	onBeforeRequest:function(data){
+		console.log({ element:this });
+	}
 
 **onComplete** - Function called after completed request
 
@@ -117,10 +120,16 @@ Using GET method and paramaters as part of the URL.
 		console.log({ element:this, data:data });
 	}
 
-**onBeforeRequest** - Function called before a request is sent
+**preventHammering** - Attempts to prevent hammering if the users click multiple times on a submit button or link before the server has responded.
 
-	onBeforeRequest:function(data){
-		console.log({ element:this });
-	}
+    preventHammering: false
+
+*Default: true*
+
+**url** - Base URL for the API
+
+    url: 'https://jsonplaceholder.typicode.com'
+	
+
 
 ### Author: [Johan Johansson](https://github.com/myspace-nu)
