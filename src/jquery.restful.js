@@ -114,7 +114,12 @@
 						as.url += '?'+$.param(data);
 					} else {
 						if(settings.dataType.toLowerCase() == 'json'){
-							as.contentType = 'application/json' + (settings.encoding)?"; charset="+settings.encoding:"";
+							as.contentType = 'application/json' + ((settings.encoding)?"; charset="+settings.encoding:"");
+							if(settings.encoding && settings.encoding!="utf-8"){
+								as.beforeSend = function(jqXHR) {
+									jqXHR.overrideMimeType(as.contentType);
+								}
+							}
 							as.dataType = 'json';
 							as.data = JSON.stringify(data);
 						} else {
@@ -173,7 +178,12 @@
 						as.url += '?'+$.param(data);
 					} else {
 						if(settings.dataType.toLowerCase() == 'json'){
-							as.contentType = 'application/json' + (settings.encoding)?"; charset="+settings.encoding:"";;
+							as.contentType = 'application/json' + ((settings.encoding)?"; charset="+settings.encoding:"");
+							if(settings.encoding && settings.encoding!="utf-8"){
+								as.beforeSend = function(jqXHR) {
+									jqXHR.overrideMimeType(as.contentType);
+								}
+							}
 							as.dataType = 'json';
 							as.data = JSON.stringify(data);
 						} else {
