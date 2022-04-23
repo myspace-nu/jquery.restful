@@ -25,6 +25,7 @@
 		var settings = $.extend({
 			url: null,
 			method: 'POST',
+			encoding: 'utf-8',
 			onComplete: function(){ },
 			onSuccess: function(){ },
 			onError: function(){ },
@@ -113,7 +114,7 @@
 						as.url += '?'+$.param(data);
 					} else {
 						if(settings.dataType.toLowerCase() == 'json'){
-							as.contentType = 'application/json; charset=utf-8';
+							as.contentType = 'application/json' + (settings.encoding)?"; charset="+settings.encoding:"";
 							as.dataType = 'json';
 							as.data = JSON.stringify(data);
 						} else {
@@ -172,7 +173,7 @@
 						as.url += '?'+$.param(data);
 					} else {
 						if(settings.dataType.toLowerCase() == 'json'){
-							as.contentType = 'application/json; charset=utf-8';
+							as.contentType = 'application/json' + (settings.encoding)?"; charset="+settings.encoding:"";;
 							as.dataType = 'json';
 							as.data = JSON.stringify(data);
 						} else {
