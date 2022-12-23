@@ -4,6 +4,8 @@ A jQuery plugin for communicating with REST APIs.
 
 [![Build Status](https://travis-ci.com/myspace-nu/jquery.restful.svg?branch=master)](https://travis-ci.com/myspace-nu/jquery.restful)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/myspace-nu/jquery.restful/blob/master/LICENSE)
+[![Code size](https://img.shields.io/github/languages/code-size/myspace-nu/jquery.restful)](https://github.com/myspace-nu/jquery.restful)
+[![Issues](https://img.shields.io/github/issues-raw/myspace-nu/jquery.restful)](https://github.com/myspace-nu/jquery.restful/issues)
 
 ## Live demo
 
